@@ -19,6 +19,7 @@ public class MonederoTest {
 
   @Test
   void Poner() {
+    // raro - no está testeando nada
     cuenta.poner(1500);
   }
 
@@ -29,6 +30,7 @@ public class MonederoTest {
 
   @Test
   void TresDepositos() {
+    // raro - no está testeando nada
     cuenta.poner(1500);
     cuenta.poner(456);
     cuenta.poner(1900);

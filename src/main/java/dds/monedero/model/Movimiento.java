@@ -24,10 +24,12 @@ public class Movimiento {
     return fecha;
   }
 
+  // raro
   public boolean fueDepositado(LocalDate fecha) {
     return isDeposito() && esDeLaFecha(fecha);
   }
 
+  // raro
   public boolean fueExtraido(LocalDate fecha) {
     return isExtraccion() && esDeLaFecha(fecha);
   }
@@ -40,11 +42,13 @@ public class Movimiento {
     return esDeposito;
   }
 
+  // raro
   public boolean isExtraccion() {
     return !esDeposito;
   }
 
   public void agregateA(Cuenta cuenta) {
+    // raro
     cuenta.setSaldo(calcularValor(cuenta));
     cuenta.agregarMovimiento(fecha, monto, esDeposito);
   }

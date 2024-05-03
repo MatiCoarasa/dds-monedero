@@ -18,10 +18,12 @@ public class Cuenta {
     saldo = 0;
   }
 
+  // raro
   public Cuenta(double montoInicial) {
     saldo = montoInicial;
   }
 
+  // raro
   public void setMovimientos(List<Movimiento> movimientos) {
     this.movimientos = movimientos;
   }
@@ -31,10 +33,12 @@ public class Cuenta {
       throw new MontoNegativoException(cuanto + ": el monto a ingresar debe ser un valor positivo");
     }
 
+    // raro - por qué usa un getter para un atributo propio? está bien la manera que filtra los movimientos máximos?
     if (getMovimientos().stream().filter(movimiento -> movimiento.isDeposito()).count() >= 3) {
       throw new MaximaCantidadDepositosException("Ya excedio los " + 3 + " depositos diarios");
     }
 
+    // raro
     new Movimiento(LocalDate.now(), cuanto, true).agregateA(this);
   }
 
@@ -54,6 +58,7 @@ public class Cuenta {
     new Movimiento(LocalDate.now(), cuanto, false).agregateA(this);
   }
 
+  // raro - se podria pasar objeto por parametro?
   public void agregarMovimiento(LocalDate fecha, double cuanto, boolean esDeposito) {
     Movimiento movimiento = new Movimiento(fecha, cuanto, esDeposito);
     movimientos.add(movimiento);
